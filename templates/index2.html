@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playground</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        header.title {
+            display: inline-flexbox;
+        }
+        div.box {
+            display: inline-flex;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: black solid 3px;
+            border-radius: 5px;
+            border-style: groove;
+            justify-content: space-evenly;
+            animation: slide-in 2s;
+        }
+
+        @keyframes slide-in {
+            from{
+                transform: translateX(1600px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <h1 class="title">Welcome! Boxes: {{numBoxes}}</h1>
+</header>
+<body>
+    
+    <div>
+        {% for i in range(0, numBoxes, 1) %}
+        <div class="box" style="background-color: {{color}};"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
